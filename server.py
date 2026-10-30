@@ -207,7 +207,12 @@ class Handler(SimpleHTTPRequestHandler):
 
         except Exception as error:
             return self.send_json({
-                '                'error': 'خطای سرویس: ' + str(getattr(error, 'code', 'network'))
+                'error': 'خطای سرویس: ' + str(
+                    getattr(error, 'code', 'network')
+                )
+            }, 502)
+
+
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', '8000'))
     print(f'CourtSide running on {port}', flush=True)
