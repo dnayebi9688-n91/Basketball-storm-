@@ -2,6 +2,7 @@
 import os, json, time, urllib.request, urllib.parse, urllib.error, threading
 from http.server import ThreadingHTTPServer, SimpleHTTPRequestHandler
 from pathlib import Path
+import iran_api
 
 ROOT = Path(__file__).resolve().parent
 os.chdir(ROOT)
@@ -21,8 +22,13 @@ class Handler(SimpleHTTPRequestHandler):
         if u.path == '/api/config': return self.send_json({'chatConfigured':bool(os.getenv('OPENAI_API_KEY'))})
         if u.path in ('/api/scores','/api/standings'):
             q=urllib.parse.parse_qs(u.query); league=q.get('league',['nba'])[0]; date=q.get('date',[''])[0]
-            if league not in LEAGUES: return self.send_json({'error':'لیگ پشتیبانی نمی‌شود'},400)
+            if league not in LEAGUES and league != 'iran': return self.send_json({'error':'لیگ پشتیبانی نمی‌شود'},400)
             if date and (len(date)!=8 or not date.isdigit()): return self.send_json({'error':'تاریخ نامعتبر'},400)
+            if league == 'iran':
+                try:
+                    fetched_at, data = iran_api.scores(date) if u.path.endswith('scores') else iran_api.standings()
+                    return self.send_json({'data':data,'fetchedAt':int(fetched_at*1000),'source':'Highlightly','refreshMinutes':30})
+                except iran_api.IranError as e: return self.send_json({'error':str(e)},503)
             kind='scoreboard' if u.path.endswith('scores') else 'standings'
             base='https://site.api.espn.com/apis/site/v2/sports/basketball/' if kind=='scoreboard' else 'https://site.api.espn.com/apis/v2/sports/basketball/'
             url=base+LEAGUES[league]+'/'+kind
