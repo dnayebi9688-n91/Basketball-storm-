@@ -207,7 +207,7 @@ class Handler(SimpleHTTPRequestHandler):
 
         except Exception as error:
             return self.send_json({
-                'error': 'ارتباط با سرویس هوش مصنوعی برقرار نشد.'
+                'error': ''خطای سرویس: ' + str(getattr(error, 'code', 'network')).'
             }, 502)
 
 
