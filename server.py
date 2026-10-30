@@ -15,7 +15,6 @@ LEAGUES = {
 
 cache = {}
 lock = threading.Lock()
-
 chat_lock = threading.Lock()
 chat_calls = []
 
@@ -164,7 +163,10 @@ class Handler(SimpleHTTPRequestHandler):
                 chat_calls.append(now)
 
             payload = {
-                'model': os.getenv('OPENAI_MODEL', 'gpt-4o-mini'),
+                'model': os.getenv(
+                    'OPENAI_MODEL',
+                    'llama-3.1-8b-instant'
+                ),
                 'messages': [
                     {
                         'role': 'system',
@@ -188,7 +190,7 @@ class Handler(SimpleHTTPRequestHandler):
             }
 
             request = urllib.request.Request(
-                'https://api.openai.com/v1/chat/completions',
+                'https://api.groq.com/openai/v1/chat/completions',
                 data=json.dumps(payload).encode(),
                 headers={
                     'Authorization': 'Bearer ' + key,
