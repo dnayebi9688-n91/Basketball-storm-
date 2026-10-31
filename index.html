@@ -9,6 +9,9 @@
 <meta property="og:title" content="کورت‌ساید | دنیای بسکتبال">
 <meta property="og:description" content="نتایج و جدول بسکتبال در یک نگاه، ساخته دانیال نایبی.">
 <meta property="og:type" content="website">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="apple-touch-icon" href="/icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
 <link rel="stylesheet" href="style.css">
 <script src="app.js" defer></script>
 </head>
@@ -424,5 +427,10 @@
   </div>
 </div>
 
+<script>
+if ('serviceWorker' in navigator && (location.protocol === 'https:' || location.hostname === 'localhost')) {
+  window.addEventListener('load', () => navigator.serviceWorker.register('/sw.js').catch(() => {}));
+}
+</script>
 </body>
 </html>
