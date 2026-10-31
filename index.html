@@ -1,42 +1,428 @@
 <!doctype html>
 <html lang="fa" dir="rtl">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#10110f">
-<title>کورت‌ساید | دنیای بسکتبال با دانیال نایبی</title><meta name="description" content="نتایج، جدول و آخرین مسابقات بسکتبال در کورت‌ساید؛ ساخته دانیال نایبی.">
-<meta property="og:title" content="کورت‌ساید | دنیای بسکتبال"><meta property="og:description" content="نتایج و جدول بسکتبال در یک نگاه، ساخته دانیال نایبی."><meta property="og:type" content="website">
-<link rel="stylesheet" href="style.css"><script src="app.js" defer></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#10110f">
+<title>کورت‌ساید | دنیای بسکتبال با دانیال نایبی</title>
+<meta name="description" content="نتایج، جدول و آخرین مسابقات بسکتبال در کورت‌ساید؛ ساخته دانیال نایبی.">
+<meta property="og:title" content="کورت‌ساید | دنیای بسکتبال">
+<meta property="og:description" content="نتایج و جدول بسکتبال در یک نگاه، ساخته دانیال نایبی.">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="style.css">
+<script src="app.js" defer></script>
 </head>
+
 <body>
+
 <aside class="sidebar">
-  <a href="#home" class="brand"><span class="brandmark">✳</span><span><b>COURT<span>SIDE</span></b><small>THE BASKETBALL HUB</small></span></a>
+  <a href="#home" class="brand">
+    <span class="brandmark">✳</span>
+    <span>
+      <b>COURT<span>SIDE</span></b>
+      <small>THE BASKETBALL HUB</small>
+    </span>
+  </a>
+
   <div class="side-label">منوی اصلی</div>
+
   <nav class="nav">
-    <a class="navlink active" href="#home"><span class="ico">◫</span> نمای کلی <span class="navarrow">‹</span></a>
-    <a class="navlink" href="#scores"><span class="ico">◉</span> بازی‌ها و نتایج</a>
-    <a class="navlink" href="#standings"><span class="ico">▥</span> جدول لیگ‌ها</a>
-    <a class="navlink" href="#assistant"><span class="ico">✧</span> دستیار بسکتبال <em>AI</em></a>
+    <a class="navlink active" href="#home">
+      <span class="ico">◫</span> نمای کلی
+      <span class="navarrow">‹</span>
+    </a>
+
+    <a class="navlink" href="#scores">
+      <span class="ico">◉</span> بازی‌ها و نتایج
+    </a>
+
+    <a class="navlink" href="#standings">
+      <span class="ico">▥</span> جدول لیگ‌ها
+    </a>
+
+    <a class="navlink" href="#assistant">
+      <span class="ico">✧</span> دستیار بسکتبال
+      <em>AI</em>
+    </a>
   </nav>
+
   <div class="side-label league-label">لیگ‌های پشتیبانی‌شده</div>
-  <div class="side-leagues"><button data-league="iran"><i class="league-icon nba">🇮🇷</i><span>IRAN<small>سوپرلیگ ایران</small></span><b>↗</b></button><button data-league="nba"><i class="league-icon nba">N</i><span>NBA<small>بسکتبال آمریکا</small></span><b>↗</b></button><button data-league="wnba"><i class="league-icon wnba">W</i><span>WNBA<small>بسکتبال زنان</small></span><b>↗</b></button><button data-league="ncaa"><i class="league-icon ncaa">N</i><span>NCAA<small>بسکتبال دانشگاهی</small></span><b>↗</b></button></div>
-  <div class="side-bottom"><div class="side-ball">✳</div><div><strong>برای عاشقان بسکتبال</strong><small>ساخته‌شده با عشق به بازی</small></div></div>
+
+  <div class="side-leagues">
+    <button data-league="iran">
+      <i class="league-icon nba">🇮🇷</i>
+      <span>IRAN<small>سوپرلیگ ایران</small></span>
+      <b>↗</b>
+    </button>
+
+    <button data-league="nba">
+      <i class="league-icon nba">N</i>
+      <span>NBA<small>بسکتبال آمریکا</small></span>
+      <b>↗</b>
+    </button>
+
+    <button data-league="wnba">
+      <i class="league-icon wnba">W</i>
+      <span>WNBA<small>بسکتبال زنان</small></span>
+      <b>↗</b>
+    </button>
+
+    <button data-league="ncaa">
+      <i class="league-icon ncaa">N</i>
+      <span>NCAA<small>بسکتبال دانشگاهی</small></span>
+      <b>↗</b>
+    </button>
+  </div>
+
+  <div class="side-bottom">
+    <div class="side-ball">✳</div>
+    <div>
+      <strong>برای عاشقان بسکتبال</strong>
+      <small>ساخته‌شده با عشق به بازی</small>
+    </div>
+  </div>
 </aside>
+
 <div class="main-wrap" id="home">
-<header class="topbar"><div class="greeting"><span class="mini-orange">●</span> خانه بسکتبال شما <span class="slash">/</span> <span>نمای کلی</span></div><div class="top-actions"><span class="today" id="today"></span><span class="top-divider"></span><a href="#assistant" class="avatar">DN</a><span class="owner"><b>دانیال نایبی</b><small>COURTSIDE</small></span><span class="chev">⌄</span></div></header>
+
+<header class="topbar">
+  <div class="greeting">
+    <span class="mini-orange">●</span>
+    خانه بسکتبال شما
+    <span class="slash">/</span>
+    <span>نمای کلی</span>
+  </div>
+
+  <div class="top-actions">
+    <span class="today" id="today"></span>
+    <span class="top-divider"></span>
+    <a href="#assistant" class="avatar">DN</a>
+    <span class="owner">
+      <b>دانیال نایبی</b>
+      <small>COURTSIDE</small>
+    </span>
+    <span class="chev">⌄</span>
+  </div>
+</header>
+
 <main>
-  <div class="page-heading"><div><div class="eyebrow"><span></span> به کورت‌ساید خوش اومدی</div><h1>بسکتبال، همیشه در جریان<span>.</span></h1><p>هر بازی، هر امتیاز، هر لحظه. همه چیز اینجاست.</p></div><div class="heading-clock"><span class="clock-icon">◷</span><div><small>زمان محلی شما</small><b id="clock">--:--:--</b></div></div></div>
-  <section class="hero"><div class="hero-image"></div><div class="hero-glow"></div><div class="hero-content"><div class="hero-tag"><span>✦</span> خانه‌ی بسکتبال</div><h2>از زمین بازی<br>تا <em>دنیای بسکتبال.</em></h2><p>نبض بازی‌ها رو اینجا دنبال کن. نتایج، جدول‌ها و<br class="desktop"> داستان‌های بسکتبال، همه در یک زمین.</p><div class="hero-actions"><a class="primary-btn" href="#scores">مشاهده بازی‌ها <span>←</span></a><a class="secondary-btn" href="#assistant"><span>✧</span> از دستیار بپرس</a></div></div><div class="hero-index"><span>01</span> / 03 <div><i></i><i></i><i></i></div></div><div class="hero-vertical">THE GAME NEVER STOPS — COURTSIDE</div></section>
-  <div class="ticker"><div><span class="pulse"></span><b>مرکز مسابقات</b><span class="ticker-sep">/</span><span>تمام هیجان بازی، در یک نگاه</span></div><span class="ticker-en">YOUR FRONT ROW SEAT TO BASKETBALL <b>↗</b></span></div>
-  <div class="content-grid"><div class="content-main">
-  <section class="scores-section" id="scores"><div class="section-heading"><div><div class="section-kicker">GAME CENTER <span>✳</span></div><h2>بازی‌ها و نتایج <span class="small-ball">◉</span></h2><p>از جدیدترین اتفاقات زمین باخبر باش.</p></div><div class="source-indicator"><span id="connection-dot"></span><b id="connection-text">در حال دریافت اطلاعات</b></div></div>
-  <div class="filter-bar"><div class="league-tabs"><button class="league-tab" data-league="iran">ایران 🇮🇷</button><button class="league-tab active" data-league="nba">NBA</button><button class="league-tab" data-league="wnba">WNBA</button><button class="league-tab" data-league="ncaa">NCAA</button></div><div class="date-control"><button id="next-day" aria-label="روز بعد">›</button><input type="date" id="date-picker" aria-label="انتخاب تاریخ"><button id="prev-day" aria-label="روز قبل">‹</button></div></div>
-  <div class="games-head"><span><i></i> مسابقات <b id="league-name">NBA</b></span><span id="last-updated">در حال بروزرسانی...</span></div><div class="games-grid" id="games"><div class="loading">در حال دریافت مسابقات...</div></div><div class="games-footer"><span id="source-info">منبع اطلاعات: ESPN · بروزرسانی خودکار هر ۳۰ ثانیه</span><button id="refresh">بروزرسانی دستی ↻</button></div></section>
-  <section class="standings-section" id="standings"><div class="section-heading compact"><div><div class="section-kicker">LEAGUE STANDINGS <span>✳</span></div><h2>جدول رده‌بندی</h2><p>رقابت برای صدر جدول رو دنبال کن.</p></div><select id="conference" aria-label="انتخاب کنفرانس"></select></div><div class="table-wrap"><table><thead><tr><th>رتبه</th><th>تیم</th><th>برد</th><th>باخت</th><th>درصد برد</th><th>فرم</th></tr></thead><tbody id="standings-body"><tr><td colspan="6">در حال دریافت جدول...</td></tr></tbody></table></div><div class="table-note">اطلاعات جدول به فصل و لیگ انتخابی بستگی دارد؛ نمایش بازیکنان لیگ ایران هنوز فعال نیست.</div></section>
-  </div><aside class="right-column">
-    <section class="assistant-card" id="assistant"><div class="assistant-top"><div class="assistant-icon">✳</div><span class="ai-badge">COURTSIDE AI ✦</span></div><div class="assistant-art"><div class="orbit orbit1"></div><div class="orbit orbit2"></div><div class="orb">✳</div><span class="star s1">✦</span><span class="star s2">✧</span></div><h3>یه دستیار، برای<br><em>تمام بسکتبال.</em></h3><p>از بازیکن‌ها و تاریخچه تا لحظه‌های ماندگار بازی، هر چی دوست داری بپرس.</p><button class="assistant-button" id="open-chat">شروع گفتگو <span>←</span></button><div class="assistant-status" id="ai-status">در حال بررسی وضعیت دستیار...</div></section>
-    <section class="explore-card"><div class="explore-head"><span>بیشتر کشف کن</span><b>↗</b></div><div class="explore-line"></div><div class="explore-item"><span class="explore-icon">▶</span><div><b>لحظه‌های ماندگار</b><small>ویدیوهای بسکتبال را پیدا کن</small></div><a href="https://www.youtube.com/results?search_query=basketball+highlights" target="_blank" rel="noopener" aria-label="جستجوی ویدیوهای بسکتبال">↖</a></div><div class="explore-item"><span class="explore-icon">◈</span><div><b>داستان بازی</b><small>تاریخچه‌ای که ادامه دارد</small></div><a href="https://en.wikipedia.org/wiki/History_of_basketball" target="_blank" rel="noopener" aria-label="تاریخچه بسکتبال">↖</a></div></section>
-    <div class="quote-card"><span>“</span><p>بسکتبال فقط یک بازی نیست،<br>یک سبک زندگیه.</p><small>IT'S MORE THAN A GAME.</small></div>
-  </aside></div>
-  <footer><span>✳ <b>COURTSIDE</b> &nbsp; · &nbsp; ساخته دانیال نایبی</span><span>MADE FOR THE LOVE OF THE GAME © 2026</span></footer>
-</main></div>
-<div class="chat-overlay" id="chat-overlay" hidden><div class="chat-panel" role="dialog" aria-modal="true" aria-label="دستیار بسکتبال"><div class="chat-header"><div><span>✳</span><div><b>دستیار کورت‌ساید</b><small id="chat-state">بسکتبال، گفتگو، کشف</small></div></div><button id="close-chat" aria-label="بستن">×</button></div><div class="chat-messages" id="chat-messages"><div class="chat-bubble bot">سلام! من دستیار کورت‌سایدم. درباره بازیکنان، تاریخ بسکتبال یا لحظه‌های ماندگار ازم بپرس. 🏀</div></div><div class="suggestions"><button data-prompt="مایکل جردن کیست؟">مایکل جردن کیست؟</button><button data-prompt="تاریخچه NBA را خلاصه کن">تاریخچه NBA</button></div><form id="chat-form"><input id="chat-input" placeholder="سؤالت رو بنویس..." maxlength="2000" required><button aria-label="ارسال">←</button></form><small class="chat-disclaimer">پاسخ‌های هوش مصنوعی ممکن است اشتباه باشند.</small></div></div>
-</body></html>
+
+  <div class="page-heading">
+    <div>
+      <div class="eyebrow">
+        <span></span> به کورت‌ساید خوش اومدی
+      </div>
+      <h1>بسکتبال، همیشه در جریان<span>.</span></h1>
+      <p>هر بازی، هر امتیاز، هر لحظه. همه چیز اینجاست.</p>
+    </div>
+
+    <div class="heading-clock">
+      <span class="clock-icon">◷</span>
+      <div>
+        <small>زمان محلی شما</small>
+        <b id="clock">--:--:--</b>
+      </div>
+    </div>
+  </div>
+
+  <section class="hero">
+    <div class="hero-image"></div>
+    <div class="hero-glow"></div>
+
+    <div class="hero-content">
+      <div class="hero-tag">
+        <span>✦</span> خانه‌ی بسکتبال
+      </div>
+
+      <h2>از زمین بازی<br>تا <em>دنیای بسکتبال.</em></h2>
+
+      <p>
+        نبض بازی‌ها رو اینجا دنبال کن. نتایج، جدول‌ها و
+        <br class="desktop">
+        داستان‌های بسکتبال، همه در یک زمین.
+      </p>
+
+      <div class="hero-actions">
+        <a class="primary-btn" href="#scores">
+          مشاهده بازی‌ها <span>←</span>
+        </a>
+
+        <a class="secondary-btn" href="#assistant">
+          <span>✧</span> از دستیار بپرس
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-index">
+      <span>01</span> / 03
+      <div><i></i><i></i><i></i></div>
+    </div>
+
+    <div class="hero-vertical">
+      THE GAME NEVER STOPS — COURTSIDE
+    </div>
+  </section>
+
+  <div class="ticker">
+    <div>
+      <span class="pulse"></span>
+      <b>مرکز مسابقات</b>
+      <span class="ticker-sep">/</span>
+      <span>تمام هیجان بازی، در یک نگاه</span>
+    </div>
+
+    <span class="ticker-en">
+      YOUR FRONT ROW SEAT TO BASKETBALL <b>↗</b>
+    </span>
+  </div>
+
+  <div class="content-grid">
+    <div class="content-main">
+
+      <section class="scores-section" id="scores">
+        <div class="section-heading">
+          <div>
+            <div class="section-kicker">
+              GAME CENTER <span>✳</span>
+            </div>
+            <h2>بازی‌ها و نتایج <span class="small-ball">◉</span></h2>
+            <p>از جدیدترین اتفاقات زمین باخبر باش.</p>
+          </div>
+
+          <div class="source-indicator">
+            <span id="connection-dot"></span>
+            <b id="connection-text">در حال دریافت اطلاعات</b>
+          </div>
+        </div>
+
+        <div class="filter-bar">
+          <div class="league-tabs">
+            <button class="league-tab" data-league="iran">ایران 🇮🇷</button>
+            <button class="league-tab active" data-league="nba">NBA</button>
+            <button class="league-tab" data-league="wnba">WNBA</button>
+            <button class="league-tab" data-league="ncaa">NCAA</button>
+          </div>
+
+          <div class="date-control">
+            <button id="next-day" aria-label="روز بعد">›</button>
+            <input type="date" id="date-picker" aria-label="انتخاب تاریخ">
+            <button id="prev-day" aria-label="روز قبل">‹</button>
+          </div>
+        </div>
+
+        <div class="games-head">
+          <span><i></i> مسابقات <b id="league-name">NBA</b></span>
+          <span id="last-updated">در حال بروزرسانی...</span>
+        </div>
+
+        <div class="games-grid" id="games">
+          <div class="loading">در حال دریافت مسابقات...</div>
+        </div>
+
+        <div class="games-footer">
+          <span id="source-info">
+            منبع اطلاعات: ESPN · بروزرسانی خودکار هر ۳۰ ثانیه
+          </span>
+          <button id="refresh">بروزرسانی دستی ↻</button>
+        </div>
+      </section>
+
+      <section class="standings-section" id="standings">
+        <div class="section-heading compact">
+          <div>
+            <div class="section-kicker">
+              LEAGUE STANDINGS <span>✳</span>
+            </div>
+            <h2>جدول رده‌بندی</h2>
+            <p>رقابت برای صدر جدول رو دنبال کن.</p>
+          </div>
+
+          <select id="conference" aria-label="انتخاب کنفرانس"></select>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>رتبه</th>
+                <th>تیم</th>
+                <th>برد</th>
+                <th>باخت</th>
+                <th>درصد برد</th>
+                <th>فرم</th>
+              </tr>
+            </thead>
+
+            <tbody id="standings-body">
+              <tr><td colspan="6">در حال دریافت جدول...</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="table-note">
+          اطلاعات جدول به فصل و لیگ انتخابی بستگی دارد؛
+          نمایش بازیکنان لیگ ایران هنوز فعال نیست.
+        </div>
+      </section>
+
+    </div>
+
+    <aside class="right-column">
+
+      <section class="assistant-card" id="assistant">
+        <div class="assistant-top">
+          <div class="assistant-icon">✳</div>
+          <span class="ai-badge">COURTSIDE AI ✦</span>
+        </div>
+
+        <div class="assistant-art">
+          <div class="orbit orbit1"></div>
+          <div class="orbit orbit2"></div>
+          <div class="orb">✳</div>
+          <span class="star s1">✦</span>
+          <span class="star s2">✧</span>
+        </div>
+
+        <h3>یه دستیار، برای<br><em>تمام بسکتبال.</em></h3>
+        <p>
+          از بازیکن‌ها و تاریخچه تا لحظه‌های ماندگار بازی،
+          هر چی دوست داری بپرس.
+        </p>
+
+        <button class="assistant-button" id="open-chat">
+          شروع گفتگو <span>←</span>
+        </button>
+
+        <div class="assistant-status" id="ai-status">
+          در حال بررسی وضعیت دستیار...
+        </div>
+      </section>
+
+      <section class="explore-card">
+        <div class="explore-head">
+          <span>بیشتر کشف کن</span>
+          <b>↗</b>
+        </div>
+
+        <div class="explore-line"></div>
+
+        <div class="explore-item">
+          <span class="explore-icon">▶</span>
+          <div>
+            <b>لحظه‌های ماندگار</b>
+            <small>ویدیوهای بسکتبال را پیدا کن</small>
+          </div>
+          <a href="https://www.youtube.com/results?search_query=basketball+highlights"
+             target="_blank" rel="noopener"
+             aria-label="جستجوی ویدیوهای بسکتبال">↖</a>
+        </div>
+
+        <div class="explore-item">
+          <span class="explore-icon">◈</span>
+          <div>
+            <b>داستان بازی</b>
+            <small>تاریخچه‌ای که ادامه دارد</small>
+          </div>
+          <a href="https://en.wikipedia.org/wiki/History_of_basketball"
+             target="_blank" rel="noopener"
+             aria-label="تاریخچه بسکتبال">↖</a>
+        </div>
+      </section>
+
+      <div class="quote-card">
+        <span>“</span>
+        <p>بسکتبال فقط یک بازی نیست،<br>یک سبک زندگیه.</p>
+        <small>IT'S MORE THAN A GAME.</small>
+      </div>
+
+    </aside>
+  </div>
+
+  <section id="team" style="margin-top:40px;padding:28px;background:#fff;border:1px solid #e9ece7;border-radius:12px;">
+    <div style="color:#e5703c;font:bold 10px Arial;letter-spacing:1.5px;direction:ltr;text-align:right;margin-bottom:8px;">
+      THE PEOPLE BEHIND COURTSIDE ✳
+    </div>
+
+    <h2 style="margin:0 0 8px;font-size:19px;font-weight:900;">
+      گروه سازنده
+    </h2>
+
+    <p style="color:#929a91;font-size:11px;margin:0 0 20px;">
+      آدم‌هایی که کنار هم کورت‌ساید را ساخته‌اند.
+    </p>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(175px,1fr));gap:10px;">
+
+      <div style="background:#f8f9f6;border:1px solid #eef1ec;border-radius:9px;padding:14px;">
+        <small style="color:#e5703c;font-size:10px;">مدیر سایت</small>
+        <strong style="display:block;margin-top:6px;font-size:13px;">
+          سروش کادوست
+        </strong>
+      </div>
+
+      <div style="background:#f8f9f6;border:1px solid #eef1ec;border-radius:9px;padding:14px;">
+        <small style="color:#e5703c;font-size:10px;">سازنده</small>
+        <strong style="display:block;margin-top:6px;font-size:13px;">
+          دانیال نایبی
+        </strong>
+      </div>
+
+      <div style="background:#f8f9f6;border:1px solid #eef1ec;border-radius:9px;padding:14px;">
+        <small style="color:#e5703c;font-size:10px;">دستیارهای طراحی</small>
+        <strong style="display:block;margin-top:6px;font-size:13px;">
+          هیژا جاسمی و آرسام انتصاری
+        </strong>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <span>✳ <b>COURTSIDE</b> &nbsp; · &nbsp; ساخته دانیال نایبی</span>
+    <span>MADE FOR THE LOVE OF THE GAME © 2026</span>
+  </footer>
+
+</main>
+</div>
+
+<div class="chat-overlay" id="chat-overlay" hidden>
+  <div class="chat-panel" role="dialog" aria-modal="true" aria-label="دستیار بسکتبال">
+
+    <div class="chat-header">
+      <div>
+        <span>✳</span>
+        <div>
+          <b>دستیار کورت‌ساید</b>
+          <small id="chat-state">بسکتبال، گفتگو، کشف</small>
+        </div>
+      </div>
+
+      <button id="close-chat" aria-label="بستن">×</button>
+    </div>
+
+    <div class="chat-messages" id="chat-messages">
+      <div class="chat-bubble bot">
+        سلام! من دستیار کورت‌سایدم. درباره بازیکنان، تاریخ بسکتبال
+        یا لحظه‌های ماندگار ازم بپرس. 🏀
+      </div>
+    </div>
+
+    <div class="suggestions">
+      <button data-prompt="مایکل جردن کیست؟">مایکل جردن کیست؟</button>
+      <button data-prompt="تاریخچه NBA را خلاصه کن">تاریخچه NBA</button>
+    </div>
+
+    <form id="chat-form">
+      <input id="chat-input" placeholder="سؤالت رو بنویس..." maxlength="2000" required>
+      <button aria-label="ارسال">←</button>
+    </form>
+
+    <small class="chat-disclaimer">
+      پاسخ‌های هوش مصنوعی ممکن است اشتباه باشند.
+    </small>
+
+  </div>
+</div>
+
+</body>
+</html>
